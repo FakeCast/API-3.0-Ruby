@@ -32,6 +32,7 @@ module Cielo
 
           client = Net::HTTP.new(uri.host, uri.port)
           client.use_ssl = true
+          client.set_debug_output($stdout)
 
           response = client.send_request(method, uri.request_uri, body, headers)
 
