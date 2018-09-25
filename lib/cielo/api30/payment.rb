@@ -42,6 +42,7 @@ module Cielo
                     :extra_data_collection,
                     :expiration_date,
                     :url,
+                    :authentication_url,
                     :number,
                     :bar_code_number,
                     :digitable_line,
@@ -89,10 +90,9 @@ module Cielo
         payment.return_code = data["ReturnCode"]
         payment.return_message = data["ReturnMessage"]
         payment.status = data["Status"]
-
+        payment.authentication_url = data["AuthenticationUrl"]
         payment.links = data["Links"]
         payment.extra_data_collection = data["ExtraDataCollection"]
-
         payment.expiration_date = data["ExpirationDate"]
         payment.url = data["Url"]
         payment.number = data["Number"]
